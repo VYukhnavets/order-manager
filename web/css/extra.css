@@ -1,0 +1,17 @@
+header {
+  background-color: #fff;
+  text-align: left;}
+
+/* Header */
+.header-logo {
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 30px; }
+
+.header-title {
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 22px; }
+
+.header-account {
+  margin-top: 5px; }
