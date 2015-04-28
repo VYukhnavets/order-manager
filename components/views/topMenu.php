@@ -13,8 +13,8 @@ use yii\helpers\Html;
                 </div>
                 <div class="collapse navbar-collapse" id="main-navbar">
                         <ul class="nav navbar-nav">
-                            <li<?=(Yii::$app->controller->id == 'default' || !empty(Yii::$app->controller->module->id) ? ' class="active"' : '');?>><a href="<?=  \yii\helpers\Url::to(['/default/index'])?>">Order Manager</a></li>
-                            <li<?=(Yii::$app->controller->id == 'csemployee' ? ' class="active"' : '');?>><a href="<?=  \yii\helpers\Url::to(['/csemployees'])?>">Employees</a></li>
+                            <li><a href="#">Order Manager</a></li>
+                            <li><a href="#">Employees</a></li>
                         </ul>
                 </div>
         </div>
