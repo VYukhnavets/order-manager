@@ -53,7 +53,7 @@ class SiteController extends Controller
 
     public function actionIndex()
     {
-        $this->redirect(\yii\helpers\Url::to(['merchant/index']));
+        return $this->render('index');
     }
 
     public function actionLogin()
@@ -64,7 +64,7 @@ class SiteController extends Controller
 
         $model = new LoginForm(['scenario' => 'login']);
         if ($model->load(Yii::$app->request->post()) && $model->login()) {
-            return $this->goBack();
+            return $this->goHome();
         } else {
             return $this->render('login', [
                 'model' => $model,
@@ -142,10 +142,5 @@ class SiteController extends Controller
                 'model' => $model,
             ]);
         }
-    }
-
-    public function actionAbout()
-    {
-        return $this->render('about');
     }
 }
