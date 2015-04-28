@@ -1,0 +1,1 @@
+You've requested a new password for the Order Manager. Click <a href="<?=  yii\helpers\Url::to(['site/resetpassword', 'key'=>$user->activation_key], true);?>">here</a> to set up your new password.
