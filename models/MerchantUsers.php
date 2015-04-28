@@ -301,7 +301,7 @@ class MerchantUsers extends \yii\db\ActiveRecord
             Yii::$app->mailer->compose('newmerchantuser', ['user' => $this, 'merchant_app_domain'=>'dev.circleshout.com'])
                 ->setFrom(Yii::$app->params['fromEmail'])
                 ->setTo($this->email)
-                ->setSubject('Welcome to Wahoo\'s Rewards Program')
+                ->setSubject('Welcome to Order Manager')
                 ->send();
         }
         return parent::afterSave($insert, $changedAttributes);
@@ -317,5 +317,18 @@ class MerchantUsers extends \yii\db\ActiveRecord
     
     public function getUsername(){
         return $this->email;
+    }
+    
+    public function generateActivationKey(){
+        $Security = new \yii\base\Security;
+        $this->activation_key = $Security->generateRandomString(50);
+        $this->activation_key_creation_time = time();
+        return $this->save(false);
+    }
+    
+    public function updatePassword($password){
+        $Security = new \yii\base\Security;
+        $this->password = md5($password);
+        return $this->save(false);
     }
 }
